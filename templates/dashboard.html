@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Dashboard</title>
+
+        <!-- Link to Google Fonts for Dancing Script -->
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+        <style>
+            body {
+                background: url('static/images/Ashitaka.gif') no-repeat center center fixed; /* Use the GIF as background */
+                background-size: cover; /* Make sure the background covers the entire screen */
+                color: #ffffff; /* White text for visibility */
+                font-family: Arial, sans-serif;
+            }
+            h2 {
+                font-family: 'Dancing Script', cursive; /* Dreamy font for greeting */
+                font-size: 2.5rem; /* Emphasized font size */
+                color: #fee272; /* Soft yellow for the greeting text */
+                text-align: center; /* Center the greeting */
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow for better readability */
+            }
+            /* Styling the container for a more formal look */
+            .container {
+                background-color: rgba(46, 46, 59, 0.413); /* Darker gray background with transparency */
+                padding: 30px;
+                border-radius: 10px;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Soft shadow for formality */
+                border: 1px solid #4a4a5b; /* Subtle border */
+                box-shadow: 0 0 10px rgba(133, 132, 132, 0.928);
+                max-width: 800px; /* Limit the container width */
+                margin: auto; /* Center the container */
+                margin-top: 5%; /* Adjust for positioning */
+            }
+            table {
+                width: 100%; /* Make table full width */
+                margin-top: 20px;
+                border-collapse: collapse; /* Neat border handling */
+            }
+            th, td {
+                border-bottom: 1px solid #4a4a5b; /* Subtle border between rows */
+                padding: 12px 15px;
+                text-align: left;
+            }
+            th {
+                background-color: #a2f4e01d; /* Darker header for contrast */
+                color: #fceeb6; /* Match header color with greeting */
+                font-weight: bold;
+                text-transform: uppercase; /* Formal table header styling */
+            }
+            td {
+                color: #ffffff; /* White text for data */
+                background-color: #393947e6; /* Slightly darker background for rows */
+            }
+            a {
+                color: #ffdd57; /* Yellow color for the logout link */
+                font-weight: bold; /* Make the link bold */
+            }
+            a:hover {
+                text-decoration: underline;
+                color: #ffb347; /* Darker yellow on hover */
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
+            <!-- Greeting with Dancing Script font -->
+            <h2>Hello, {{ user_details.first_name }}!</h2>
+
+            <!-- Rest of the content in a simple, visible font -->
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Middle Name</th>
+                        <th>Last Name</th>
+                        <th>Contact Number</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ user_details.first_name }}</td>
+                        <td>{{ user_details.middle_name }}</td>
+                        <td>{{ user_details.last_name }}</td>
+                        <td>{{ user_details.contact_number }}</td>
+                        <td>{{ user_details.email }}</td>
+                        <td>{{ user_details.address }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Logout button -->
+            <a href="/logout" class="btn btn-danger">Logout</a>
+        </div>
+
+        <!-- Bootstrap and jQuery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+</html>
